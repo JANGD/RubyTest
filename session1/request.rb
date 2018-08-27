@@ -31,7 +31,6 @@ class Tools
         json_object = JSON.parse(chunk)
         model = Model.new(json_object)
         puts model.id + ' '+ model.errorDetails + ' ' + model.status
-        puts model.cart
         puts model
         puts chunk
       end
