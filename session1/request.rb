@@ -7,12 +7,10 @@ class Model
   attr_accessor :status
   attr_accessor :id
   attr_accessor :errorDetails
-  attr_accessor :cart
   def initialize(model)
     @status = model['status']
     @id = model['id']
     @errorDetails = model['errorDetails']
-    @cart = model['cart']
   end
 end
 
