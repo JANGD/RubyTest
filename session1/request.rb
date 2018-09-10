@@ -29,8 +29,9 @@ class Tools
         # puts model.id + ' '+ model.errorDetails + ' ' + model.status
         # puts model
         # puts json_object
-        file_manager = File.new('/Users/jiangdi/Desktop/order.txt')
-        file_manager.write('#{chunk}')
+        file_manager = File.new('', 'r+')
+        file_manager.reopen(file_manager)
+        file_manager.write(chunk)
         File.open(file_manager).each { |f|
 
         }
