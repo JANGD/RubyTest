@@ -24,18 +24,23 @@ class Tools
     res.use_ssl = true
     if code == 400 then
       res.get(uri.request_uri, headers) do |chunk|
-        json_object = JSON.parse(chunk)
+        # json_object = JSON.parse(chunk)
         # model = Model.new(json_object)
         # puts model.id + ' '+ model.errorDetails + ' ' + model.status
         # puts model
-        puts json_object
+        # puts json_object
+        file_manager = File.new('/Users/jiangdi/Desktop/order.txt')
+        file_manager.write('#{chunk}')
+        File.open(file_manager).each { |f|
+
+        }
         puts chunk
       end
     end
   end
 end
 
-
+#https://www.apiopen.top/journalismApi
 STDOUT.flush
 url = gets.chomp
 get_request_data = Tools.new
